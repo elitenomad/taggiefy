@@ -1,7 +1,7 @@
 # TODO: Inspiration from https://github.com/pat/gutentag gem.
 # Not working :)
 
-require 'spec_helper'
+require_relative '../spec_helper'
 
 describe "Managing tags via names" do
   let(:breed) { Breed.create }

@@ -1,4 +1,5 @@
-require 'spec_helper'
+require_relative '../spec_helper'
+require_relative '../dummy/app/models/breed'
 
 describe 'Adding and removing tags' do
   let(:breed)  { Breed.create }

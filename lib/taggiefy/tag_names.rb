@@ -12,9 +12,7 @@ class Taggiefy::TagNames
 
   def <<(name)
     # find an existing tag, or create a new one
-    tag = Taggiefy::Tag.where(:name => name).first ||
-        Taggiefy::Tag.create(:name => name)
-
+    tag = Taggiefy::Tag.find_or_create_by(name: name)
     taggable.tags << tag
   end
 
@@ -30,7 +28,7 @@ class Taggiefy::TagNames
   end
 
   def delete(name)
-    taggable.tags.delete Taggiefy::Tag.where(:name => name).first
+    taggable.tags.delete Taggiefy::Tag.find_by(name: name)
   end
 
   def +(array)
